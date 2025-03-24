@@ -1,6 +1,6 @@
 # EXNO2DS
 # AIM:
-      To perform Exploratory Data Analysis on the given data set.
+ To perform Exploratory Data Analysis on the given data set.
       
 # EXPLANATION:
   The primary aim with exploratory analysis is to examine the data for distribution, outliers and anomalies to direct specific testing of your hypothesis.
@@ -41,6 +41,7 @@ dt.set_index("PassengerId",inplace=True)
 dt.describe()
 ```
 ![Screenshot 2025-03-24 102536](https://github.com/user-attachments/assets/4213e17e-3ab9-4b32-a948-b64b2110357c)
+CATEGORICAL DATA ANALYSIS
 ```python
 dt.nunique()
 ```
@@ -54,6 +55,8 @@ per=(dt["Survived"].value_counts()/dt.shape[0]*100).round(2)
 print(per)
 ```
 ![Screenshot 2025-03-24 102628](https://github.com/user-attachments/assets/f9ebb11a-7889-4e14-83dd-27bafe9abf5b)
+
+UNIVARIATE ANALYSIS
 ```python
 sns.countplot(data=dt,x="Survived")
 ```
@@ -92,6 +95,8 @@ sns.catplot(x=dt["Age"],y=dt["Fare"])
 sns.jointplot(x="Age",y="Fare",data=dt)
 ```
 ![Screenshot 2025-03-24 103422](https://github.com/user-attachments/assets/4f895fbf-3f16-45c4-870d-7be5f3e42a28)
+
+MULTIVARIATE ANALYSIS
 ```python
 fig, ax1 = plt.subplots(figsize=(8,5))
 pt=sns.boxplot(ax=ax1,x='Pclass',y='Age',hue='Gender',data=dt)
@@ -112,4 +117,4 @@ sns.pairplot(dt)
 ![Screenshot 2025-03-24 103549](https://github.com/user-attachments/assets/2f0ced28-47e8-4dfa-ab4d-7330496ab9f6)
 
 # RESULT
-        To perfrom Exploratory Data Analysis on the given data set is successully completed.    
+ To perfrom Exploratory Data Analysis on the given data set is successully completed.    
